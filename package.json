@@ -4,7 +4,8 @@
   "description": "A Discord bot for betting on AFK users",
   "main": "bot.js",
   "scripts": {
-    "start": "nodemon bot.js",
+    "start": "node bot.js",
+    "dev": "nodemon bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +26,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "*"
   }
 }
