@@ -20,7 +20,6 @@ const COLLECTION_NAMES = {
 /* ------------ Global ------------ */
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const mongoUrl = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.rn139.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 let db = null;
 let guilds = null;
 let users = null;
@@ -56,7 +55,7 @@ client.on("ready", async () => {
 
 /* ------------ Setup ------------ */
 
-MongoClient.connect(mongoUrl, async (connectionError, dbClient) => {
+MongoClient.connect(process.env.MONGO_URI, async (connectionError, dbClient) => {
   if (connectionError) throw connectionError;
   console.log("Successfully connected to database.");
 
